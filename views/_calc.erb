@@ -1,0 +1,23 @@
+<div id="logs">  
+  
+  <h2>Recent calculator logs are </h2><br>
+  <table id="logsTable" border=15>
+    <thead>
+      <tr>
+          <th>Equation</th>
+          <th>Calculation</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <% if @calcs and @calcs.length>0 %>
+      <% @calcs.each do |calc| %>
+        <tr>
+          <td><%= calc.equation %></td>
+          <td><%= calc.value %></td>
+        </tr>
+      <% end %>  
+    <% end %>
+    </tbody>
+  </table>
+</div>

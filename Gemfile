@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+gem 'httpclient'
+gem 'pusher'
+gem 'sinatra'
+gem 'data_mapper'
+gem 'dm-sqlite-adapter', '~> 1.2'
+gem 'dentaku'
