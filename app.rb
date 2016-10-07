@@ -5,7 +5,15 @@ require 'dentaku'
 require 'data_mapper' # metagem, requires common plugins too.
 
 # need install dm-sqlite-adapter
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/calculator.db")
+#DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/calculator.db")
+
+configure :development do
+  DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/calculator.db")
+end
+
+configure :production do
+  DataMapper.setup(:default, ENV['DATABASE_URL'])
+end
 
 class Calculator
   include DataMapper::Resource
